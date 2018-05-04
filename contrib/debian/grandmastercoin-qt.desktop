@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GrandMasterCoin
+Comment=GrandMasterCoin P2P Cryptocurrency
+Comment[fr]=GrandMasterCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=GrandMasterCoin, eşten eşe kriptografik sanal para birimi
+Exec=grandmastercoin-qt %u
+Terminal=false
+Type=Application
+Icon=grandmastercoin128
+MimeType=x-scheme-handler/grandmastercoin;
+Categories=Office;Finance;

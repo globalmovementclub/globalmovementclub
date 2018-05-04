@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/grandmastercoin_bg.qm</file>
+        <file alias="de">locale/grandmastercoin_de.qm</file>
+        <file alias="en">locale/grandmastercoin_en.qm</file>
+        <file alias="es">locale/grandmastercoin_es.qm</file>
+        <file alias="fi">locale/grandmastercoin_fi.qm</file>
+        <file alias="fr">locale/grandmastercoin_fr.qm</file>
+        <file alias="it">locale/grandmastercoin_it.qm</file>
+        <file alias="ja">locale/grandmastercoin_ja.qm</file>
+        <file alias="pl">locale/grandmastercoin_pl.qm</file>
+        <file alias="pt">locale/grandmastercoin_pt.qm</file>
+        <file alias="ru">locale/grandmastercoin_ru.qm</file>
+        <file alias="sk">locale/grandmastercoin_sk.qm</file>
+        <file alias="sv">locale/grandmastercoin_sv.qm</file>
+        <file alias="vi">locale/grandmastercoin_vi.qm</file>
+        <file alias="zh_CN">locale/grandmastercoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/grandmastercoin_zh_TW.qm</file>
+    </qresource>
+</RCC>
