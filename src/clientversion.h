@@ -38,7 +38,7 @@
 #define DO_STRINGIZE(X) #X
 
 //! Copyright string used in Windows .rc files
-#define COPYRIGHT_STR STRINGIZE(COPYRIGHT_YEAR) " The GrandMasterCoin Developers, 2014-" STRINGIZE(COPYRIGHT_YEAR) " The GrandMasterCoin Core Developers, 2009-" STRINGIZE(COPYRIGHT_YEAR) " The Bitcoin Core Developers"
+#define COPYRIGHT_STR STRINGIZE(COPYRIGHT_YEAR) " The GrandMasterCoin Developers, 2009-" STRINGIZE(COPYRIGHT_YEAR) " The Bitcoin Core Developers"
 
 /**
  * grandmastercoind-res.rc includes this file, but it cannot cope with real c++ code.
