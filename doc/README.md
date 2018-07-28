@@ -1,4 +1,4 @@
-GrandMasterCoin Core 0.7.5
+GrandMasterCoin Core 0.7.6
 =====================
 
 This is the official reference wallet for GrandMasterCoin digital currency and comprises the backbone of the GrandMasterCoin peer-to-peer network. You can [download GrandMasterCoin Core](https://gmastercoin.com/downloads/) or [build it yourself](#building) using the guides below.

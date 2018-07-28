@@ -1,4 +1,4 @@
-GrandMasterCoin Core staging tree 0.7.5
+GrandMasterCoin Core staging tree 0.7.6
 ===============================
 
 https://gmastercoin.com

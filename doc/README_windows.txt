@@ -1,4 +1,4 @@
-GrandMasterCoin Core 0.7.5
+GrandMasterCoin Core 0.7.6
 =====================
 
 Intro
