@@ -126,7 +126,7 @@ struct masternode_info_t
 };
 
 //
-// The Masternode Class. For managing the Darksend process. It contains the input of the 3000DRK, signature to prove
+// The Masternode Class. For managing the Darksend process. It contains the input of the 5000DRK, signature to prove
 // it's the one who own that ip address and code for calculating the payment election.
 //
 class CMasternode : public masternode_info_t
@@ -252,7 +252,7 @@ public:
         return false;
     }
 
-    /// Is the input associated with collateral public key? (and there is 3000 GMC - checking if valid masternode)
+    /// Is the input associated with collateral public key? (and there is 5000 GMC - checking if valid masternode)
     bool IsInputAssociatedWithPubkey();
 
     bool IsValidNetAddr();

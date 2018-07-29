@@ -132,3 +132,4 @@ grandmastercoin-cli
 grandmastercoind
 grandmastercoin-qt
 make
+/.vscode/
