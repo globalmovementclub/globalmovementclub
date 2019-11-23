@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 
 /*
  * FIELDS AND CLASSIFICATION
@@ -46,7 +46,7 @@
  * =========================
  *
  *   // network
- *   CGrandMasterCoinNetwork lvl, network-type, network-status, network-error, milestone-status*
+ *   CGlobalMovementClubNetwork lvl, network-type, network-status, network-error, milestone-status*
  *   CCategory lvl, category-type, status, status-error
  *   CNetworkGlobalVariable lvl, global-type, status, status-error
  *   // base: actor
@@ -118,7 +118,7 @@ private:
     int nLevel;
     std::string strCategory;
 
-    // Current OBJECT STATUS (see http://govman.gmastercoin.com/index.php/Documentation_:_Status_Field)
+    // Current OBJECT STATUS (see http://govman.globalmovement.club/index.php/Documentation_:_Status_Field)
     int nStatusID;
     std::string strStatusMessage;
 
@@ -131,7 +131,7 @@ public:
 };
 
 // // root node
-class CGrandMasterCoinNetwork : public CGovernanceObject
+class CGlobalMovementClubNetwork : public CGovernanceObject
 {
 private:
     std::string strName;
@@ -139,7 +139,7 @@ private:
 
 
 public:
-    CGrandMasterCoinNetwork(UniValue objIn)
+    CGlobalMovementClubNetwork(UniValue objIn)
     {
         strName = objIn["name"].get_str();
         strURL = objIn["name"].get_str();
@@ -175,9 +175,9 @@ public:
 
 };
 
-// // can be under: GrandMasterCoinNetwork
+// // can be under: GlobalMovementClubNetwork
 // //   -- signature requirements : Key1(User)
-// class CGrandMasterCoinNetworkVariable : public CGovernanceObject
+// class CGlobalMovementClubNetworkVariable : public CGovernanceObject
 // {
 // private:
 
@@ -280,7 +280,7 @@ public:
 //     // isRootCategory()
 //     // {
 //     //     // root categories won't have categories as parents
-//     //     return (IsType() == GrandMasterCoinNetwork);
+//     //     return (IsType() == GlobalMovementClubNetwork);
 //     // }
 
 //     // isSubcategoryOf(std::string strParentName)

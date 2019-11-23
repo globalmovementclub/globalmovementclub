@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -264,7 +264,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
             total += subtotal;
         }
         else
-        {   // User-entered grandmastercoin address / amount:
+        {   // User-entered globalmovementclub address / amount:
             if(!validateAddress(rcp.address))
             {
                 return InvalidAddress;
@@ -375,7 +375,7 @@ WalletModel::SendCoinsReturn WalletModel::sendCoins(WalletModelTransaction &tran
                 rcp.paymentRequest.SerializeToString(&value);
                 newTx->vOrderForm.push_back(make_pair(key, value));
             }
-            else if (!rcp.message.isEmpty()) // Message from normal grandmastercoin:URI (grandmastercoin:XyZ...?message=example)
+            else if (!rcp.message.isEmpty()) // Message from normal globalmovementclub:URI (globalmovementclub:XyZ...?message=example)
             {
                 newTx->vOrderForm.push_back(make_pair("Message", rcp.message.toStdString()));
             }

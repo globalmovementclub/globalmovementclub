@@ -1,7 +1,7 @@
-Building GrandMasterCoin Core
+Building GlobalMovementClub Core
 
 After you install the usual build tools and C++ development tools,
-GrandMasterCoin Core also needs some build dependencies which are not always provided
+GlobalMovementClub Core also needs some build dependencies which are not always provided
 by default by the OS package manager
 (in particular BerkeleyDB 4.8 for building with wallet support).
 
@@ -21,10 +21,10 @@ use the autogen script to prepare the build environment.
     make
 
 Precompiled binaries are available at github, see
-https://github.com/grandmastercoin/grandmastercoin-binaries
+https://github.com/globalmovementclub/globalmovementclub-binaries
 
 Always verify the signatures and checksums.
 
-See doc/build-*.md for instructions on building grandmastercoind,
+See doc/build-*.md for instructions on building gmcd,
 the intended-for-services, no-graphical-interface,
-reference implementation of GrandMasterCoin.
+reference implementation of GlobalMovementClub.

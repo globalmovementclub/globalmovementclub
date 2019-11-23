@@ -1,0 +1,22 @@
+[Unit]
+Description=GlobalMovementClub's distributed currency daemon
+After=network.target
+
+[Service]
+User=globalmovementclubcore
+Group=globalmovementclubcore
+
+Type=forking
+PIDFile=/var/lib/gmcd/gmcd.pid
+ExecStart=/usr/bin/gmcd -daemon -pid=/var/lib/gmcd/gmcd.pid \
+-conf=/etc/globalmovementclubcore/gmc.conf -datadir=/var/lib/gmcd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

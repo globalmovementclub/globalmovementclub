@@ -17,7 +17,7 @@
 #include "util.h"
 #include "utilstrencodings.h"
 
-#include "test/test_grandmastercoin.h"
+#include "test/test_globalmovementclub.h"
 
 #include <boost/test/unit_test.hpp>
 

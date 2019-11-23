@@ -1,6 +1,0 @@
-usr/local/bin/grandmastercoin-qt usr/bin
-share/pixmaps/grandmastercoin32.xpm usr/share/pixmaps
-share/pixmaps/grandmastercoin16.xpm usr/share/pixmaps
-share/pixmaps/grandmastercoin128.png usr/share/pixmaps
-debian/grandmastercoin-qt.desktop usr/share/applications
-debian/grandmastercoin-qt.protocol usr/share/kde4/services/

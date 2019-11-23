@@ -17,7 +17,7 @@
   <string>APPL</string>
 
   <key>CFBundleGetInfoString</key>
-  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@, Copyright © 2009-@COPYRIGHT_YEAR@ The Bitcoin Core developers, 2014-@COPYRIGHT_YEAR@ The GrandMasterCoin Core developers</string>
+  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@, Copyright © 2009-@COPYRIGHT_YEAR@ The Bitcoin Core developers, 2014-@COPYRIGHT_YEAR@ The GlobalMovementClub Core developers</string>
 
   <key>CFBundleShortVersionString</key>
   <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@</string>
@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>GrandMasterCoin-Qt</string>
+  <string>GlobalMovementClub-Qt</string>
   
   <key>CFBundleName</key>
-  <string>GrandMasterCoin-Qt</string>
+  <string>GlobalMovementClub-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.grandmastercoin.GrandMasterCoin-Qt</string>
+  <string>org.globalmovementclub.GlobalMovementClub-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.grandmastercoin.GrandMasterCoinPayment</string>
+      <string>org.globalmovementclub.GlobalMovementClubPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>grandmastercoin</string>
+        <string>globalmovementclub</string>
       </array>
     </dict>
   </array>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>org.grandmastercoin.paymentrequest</string>
+      <string>org.globalmovementclub.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>GrandMasterCoin payment request</string>
+      <string>GlobalMovementClub payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -68,10 +68,10 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/x-grandmastercoin-payment-request</string>
+        <string>application/x-globalmovementclub-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>grandmastercoinpaymentrequest</string>
+          <string>globalmovementclubpaymentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>org.grandmastercoin.paymentrequest</string>
+        <string>org.globalmovementclub.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

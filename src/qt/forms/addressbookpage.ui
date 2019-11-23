@@ -137,7 +137,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../grandmastercoin.qrc"/>
+  <include location="../globalmovementclub.qrc"/>
  </resources>
  <connections/>
 </ui>

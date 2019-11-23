@@ -1,8 +1,8 @@
-Source: grandmastercoin
+Source: globalmovementclub
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@gmastercoin.com>
-Uploaders: Holger Schinzel <holger@gmastercoin.com>
+Maintainer: Holger Schinzel <holger@globalmovement.club>
+Uploaders: Holger Schinzel <holger@globalmovement.club>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -24,45 +24,45 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler,
  python
 Standards-Version: 3.9.2
-Homepage: https://gmastercoin.com/
-Vcs-Git: git://github.com/grandmastercoin/grandmastercoin.git
-Vcs-Browser: https://github.com/grandmastercoin/grandmastercoin
+Homepage: https://globalmovement.club/
+Vcs-Git: git://github.com/globalmovementclub/globalmovementclub.git
+Vcs-Browser: https://github.com/globalmovementclub/globalmovementclub
 
-Package: grandmastercoind
+Package: gmcd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- GrandMasterCoin is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. GrandMasterCoin uses peer-to-peer
+ GlobalMovementClub is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. GlobalMovementClub uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. GrandMasterCoin Core
+ and issuing money are carried out collectively by the network. GlobalMovementClub Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, grandmastercoind, and the CLI tool
- grandmastercoin-cli to interact with the daemon.
+ This package provides the daemon, gmcd, and the CLI tool
+ gmc-cli to interact with the daemon.
 
-Package: grandmastercoin-qt
+Package: globalmovementclub-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- GrandMasterCoin is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. GrandMasterCoin uses peer-to-peer
+ GlobalMovementClub is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. GlobalMovementClub uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. GrandMasterCoin Core
+ and issuing money are carried out collectively by the network. GlobalMovementClub Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides GrandMasterCoin-Qt, a GUI for GrandMasterCoin based on Qt.
+ This package provides GlobalMovementClub-Qt, a GUI for GlobalMovementClub based on Qt.
 
-Package: grandmastercoin-tx
+Package: gmc-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- GrandMasterCoin is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. GrandMasterCoin uses peer-to-peer
+ GlobalMovementClub is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. GlobalMovementClub uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. GrandMasterCoin Core
+ and issuing money are carried out collectively by the network. GlobalMovementClub Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides grandmastercoin-tx, a command-line transaction creation
- tool which can be used without a grandmastercoin daemon.  Some means of
+ This package provides gmc-tx, a command-line transaction creation
+ tool which can be used without a globalmovementclub daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven GrandMasterCoin tests.
+Utilities to generate test vectors for the data-driven GlobalMovementClub tests.
 
 Usage: 
 

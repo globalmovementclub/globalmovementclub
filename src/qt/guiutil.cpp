@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -118,7 +118,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a GrandMasterCoin address (e.g. %1)").arg("TL3tjrD362jSuzsgB1cpQpbaTNkSAK6tUt"));
+    widget->setPlaceholderText(QObject::tr("Enter a GlobalMovementClub address (e.g. %1)").arg("TL3tjrD362jSuzsgB1cpQpbaTNkSAK6tUt"));
 #endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
@@ -135,8 +135,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no grandmastercoin: URI
-    if(!uri.isValid() || uri.scheme() != QString("grandmastercoin"))
+    // return if URI is not valid or is no globalmovementclub: URI
+    if(!uri.isValid() || uri.scheme() != QString("globalmovementclub"))
         return false;
 
     SendCoinsRecipient rv;
@@ -205,13 +205,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert grandmastercoin:// to grandmastercoin:
+    // Convert globalmovementclub:// to globalmovementclub:
     //
-    //    Cannot handle this later, because grandmastercoin:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because globalmovementclub:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("grandmastercoin://", Qt::CaseInsensitive))
+    if(uri.startsWith("globalmovementclub://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 7, "grandmastercoin:");
+        uri.replace(0, 7, "globalmovementclub:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -219,7 +219,7 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 
 QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("grandmastercoin:%1").arg(info.address);
+    QString ret = QString("globalmovementclub:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
@@ -425,7 +425,7 @@ void openConfigfile()
 {
     boost::filesystem::path pathConfig = GetConfigFile();
 
-    /* Open grandmastercoin.conf with the associated application */
+    /* Open gmc.conf with the associated application */
     if (boost::filesystem::exists(pathConfig))
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }
@@ -635,15 +635,15 @@ boost::filesystem::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "GrandMasterCoin Core.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "GlobalMovementClub Core.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "GrandMasterCoin Core (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("GrandMasterCoin Core (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "GlobalMovementClub Core (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("GlobalMovementClub Core (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for "GrandMasterCoin Core*.lnk"
+    // check for "GlobalMovementClub Core*.lnk"
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -735,8 +735,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "grandmastercoincore.desktop";
-    return GetAutostartDir() / strprintf("grandmastercoincore-%s.lnk", chain);
+        return GetAutostartDir() / "globalmovementclubcore.desktop";
+    return GetAutostartDir() / strprintf("globalmovementclubcore-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -775,13 +775,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a grandmastercoincore.desktop file to the autostart directory:
+        // Write a globalmovementclubcore.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=GrandMasterCoin Core\n";
+            optionFile << "Name=GlobalMovementClub Core\n";
         else
-            optionFile << strprintf("Name=GrandMasterCoin Core (%s)\n", chain);
+            optionFile << strprintf("Name=GlobalMovementClub Core (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", GetBoolArg("-testnet", false), GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -800,7 +800,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl);
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl)
 {
-    // loop through the list of startup items and try to find the GrandMasterCoin Core app
+    // loop through the list of startup items and try to find the GlobalMovementClub Core app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
@@ -845,7 +845,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, bitcoinAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add GrandMasterCoin Core app to startup item list
+        // add GlobalMovementClub Core app to startup item list
         LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, bitcoinAppUrl, NULL, NULL);
     }
     else if(!fAutoStart && foundItem) {

@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -73,10 +73,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case GMC: return QString("GrandMasterCoin");
-            case mGMC: return QString("Milli-GrandMasterCoin (1 / 1" THIN_SP_UTF8 "000)");
-            case uGMC: return QString("Micro-GrandMasterCoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-GrandMasterCoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case GMC: return QString("GlobalMovementClub");
+            case mGMC: return QString("Milli-GlobalMovementClub (1 / 1" THIN_SP_UTF8 "000)");
+            case uGMC: return QString("Micro-GlobalMovementClub (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-GlobalMovementClub (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -84,10 +84,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case GMC: return QString("TestGrandMasterCoins");
-            case mGMC: return QString("Milli-TestGrandMasterCoin (1 / 1" THIN_SP_UTF8 "000)");
-            case uGMC: return QString("Micro-TestGrandMasterCoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestGrandMasterCoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case GMC: return QString("TestGlobalMovementClubs");
+            case mGMC: return QString("Milli-TestGlobalMovementClub (1 / 1" THIN_SP_UTF8 "000)");
+            case uGMC: return QString("Micro-TestGlobalMovementClub (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestGlobalMovementClub (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }

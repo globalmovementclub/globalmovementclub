@@ -5,7 +5,7 @@
 #include "chain.h"
 #include "random.h"
 #include "versionbits.h"
-#include "test/test_grandmastercoin.h"
+#include "test/test_globalmovementclub.h"
 #include "chainparams.h"
 #include "validation.h"
 #include "consensus/params.h"

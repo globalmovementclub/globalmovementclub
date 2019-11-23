@@ -6,18 +6,18 @@
 #define BITCOIN_CLIENTVERSION_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/grandmastercoin-config.h"
+#include "config/globalmovementclub-config.h"
 #else
 
 /**
  * client versioning and copyright year
  */
 
-//! These need to be macros, as clientversion.cpp's and grandmastercoin*-res.rc's voodoo requires it
+//! These need to be macros, as clientversion.cpp's and globalmovementclub*-res.rc's voodoo requires it
 #define CLIENT_VERSION_MAJOR 0
 #define CLIENT_VERSION_MINOR 7
-#define CLIENT_VERSION_REVISION 6
-#define CLIENT_VERSION_BUILD 2
+#define CLIENT_VERSION_REVISION 7
+#define CLIENT_VERSION_BUILD 1
 
 //! Set to true for release, false for prerelease or test build
 #define CLIENT_VERSION_IS_RELEASE true
@@ -26,7 +26,7 @@
  * Copyright year (2009-this)
  * Todo: update this when changing our copyright comments in the source
  */
-#define COPYRIGHT_YEAR 2018
+#define COPYRIGHT_YEAR 2020
 
 #endif //HAVE_CONFIG_H
 
@@ -38,10 +38,10 @@
 #define DO_STRINGIZE(X) #X
 
 //! Copyright string used in Windows .rc files
-#define COPYRIGHT_STR STRINGIZE(COPYRIGHT_YEAR) " The GrandMasterCoin Developers, 2009-" STRINGIZE(COPYRIGHT_YEAR) " The Bitcoin Core Developers"
+#define COPYRIGHT_STR STRINGIZE(COPYRIGHT_YEAR) " The GlobalMovementClub Developers, 2009-" STRINGIZE(COPYRIGHT_YEAR) " The Bitcoin Core Developers"
 
 /**
- * grandmastercoind-res.rc includes this file, but it cannot cope with real c++ code.
+ * gmcd-res.rc includes this file, but it cannot cope with real c++ code.
  * WINDRES_PREPROC is defined to indicate that its pre-processor is running.
  * Anything other than a define should be guarded below.
  */

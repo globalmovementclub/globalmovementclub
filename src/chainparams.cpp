@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -91,8 +91,8 @@ public:
         consensus.BIP34Height = 25;
         consensus.BIP34Hash = uint256S("00000410a86f9ad4066cb8ef7aa22560a23d5ad89033242dd17953aea3c4243f");
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // GrandMasterCoin: 1 day
-        consensus.nPowTargetSpacing = 2 * 60; // GrandMasterCoin: 2 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // GlobalMovementClub: 1 day
+        consensus.nPowTargetSpacing = 2 * 60; // GlobalMovementClub: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 500;
@@ -116,10 +116,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000011865c9c755b6");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000002502fc7d90329");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x000000013e330a48dbe49354dfc11532fd52d4595b4f59f50dc981889d2cbfc8");
+        consensus.defaultAssumeValid = uint256S("0x00000003cfaa3d19854937dd7cd30072dd5a9448efe2b28671b39924c1e07328");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -142,20 +142,20 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x61b3e40ad857b190f8ef4eb583d89d704e5f1505e8aa6c76634575dd2fb2d933"));
 
 
-        vSeeds.push_back(CDNSSeedData("gmastercoin.com", "seed.gmastercoin.com"));
+        vSeeds.push_back(CDNSSeedData("globalmovement.club", "seed.globalmovement.club"));
 
-        // GrandMasterCoin addresses start with 'G'
+        // GlobalMovementClub addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
-        // GrandMasterCoin script addresses start with '7'
+        // GlobalMovementClub script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
-        // GrandMasterCoin private keys start with '7' or 'X'
+        // GlobalMovementClub private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-        // GrandMasterCoin BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // GlobalMovementClub BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // GrandMasterCoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // GlobalMovementClub BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        // GrandMasterCoin BIP44 coin type is '5'
+        // GlobalMovementClub BIP44 coin type is '5'
         nExtCoinType = 5;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -172,12 +172,12 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    43720, uint256S("0x000000001d70e7bc6aa1ce69eaca985751d79a5c42e7f3ce3451038bb91746d7"))
-            (    52980, uint256S("0x00000001aa66b89a92f379428759872babd76f7cfeda1cf71c7af14bce7e5104"))
-            (    53004, uint256S("0x00000001026b41d3af1a7d3c31e368b4305964131a8b51c3dcb194b58288cbc1"))
-            (    57207, uint256S("0x000000001632b1a94473b9c713c343d8724347f860321e114ff0e0764d9b7bce")),
-            1532691318, // * UNIX timestamp of last checkpoint block
-            68835,      // * total number of transactions between genesis and last checkpoint
+            (    57207, uint256S("0x000000001632b1a94473b9c713c343d8724347f860321e114ff0e0764d9b7bce"))
+            (   110350, uint256S("0x000000014428a68886dead25eab4b85bf756f359d4c1762a4b89d0ad83ac9f99"))
+            (   260444, uint256S("0x000000037fa901b126140dc53752d11dff3fc3d6b7b9b4fdde4f06c76090ae60"))
+            (   350020, uint256S("0x0000000092ef8a744051683597a6f51cfd98ed887ca8d65e3516b29bccaf1ffb")),
+            1574520294, // * UNIX timestamp of last checkpoint block
+            393728,     // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             1000        // * estimated number of transactions per day after checkpoint
         };
@@ -210,8 +210,8 @@ public:
         consensus.BIP34Height = 25;
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // GrandMasterCoin: 1 day
-        consensus.nPowTargetSpacing = 2 * 60; // GrandMasterCoin: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // GlobalMovementClub: 1 day
+        consensus.nPowTargetSpacing = 2 * 60; // GlobalMovementClub: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 200; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -257,20 +257,20 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("gmastercoin.com",  "testseed.gmastercoin.com"));
+        vSeeds.push_back(CDNSSeedData("globalmovement.club",  "testseed.globalmovement.club"));
 
-        // Testnet GrandMasterCoin addresses start with 'y'
+        // Testnet GlobalMovementClub addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet GrandMasterCoin script addresses start with '8' or '9'
+        // Testnet GlobalMovementClub script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet GrandMasterCoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet GlobalMovementClub BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet GrandMasterCoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet GlobalMovementClub BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Testnet GrandMasterCoin BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet GlobalMovementClub BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -324,8 +324,8 @@ public:
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // GrandMasterCoin: 1 day
-        consensus.nPowTargetSpacing = 2 * 60; // GrandMasterCoin: 2 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // GlobalMovementClub: 1 day
+        consensus.nPowTargetSpacing = 2 * 60; // GlobalMovementClub: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nPowKGWHeight = 15200; // same as mainnet
@@ -380,18 +380,18 @@ public:
             0,
             0
         };
-        // Regtest GrandMasterCoin addresses start with 'y'
+        // Regtest GlobalMovementClub addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest GrandMasterCoin script addresses start with '8' or '9'
+        // Regtest GlobalMovementClub script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest GrandMasterCoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest GlobalMovementClub BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest GrandMasterCoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest GlobalMovementClub BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Regtest GrandMasterCoin BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest GlobalMovementClub BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
    }
 };

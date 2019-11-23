@@ -6,13 +6,13 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/grandmastercoin
-src/grandmastercoind
-src/grandmastercoin-cli
-src/grandmastercoin-tx
-src/test/test_grandmastercoin
-src/qt/test/test_grandmastercoin-qt
-src/bench/bench_grandmastercoin
+src/globalmovementclub
+src/gmcd
+src/gmc-cli
+src/gmc-tx
+src/test/test_globalmovementclub
+src/qt/test/test_globalmovementclub-qt
+src/bench/bench_globalmovementclub
 
 # autoreconf
 Makefile.in
@@ -35,8 +35,8 @@ config.log
 config.status
 configure
 libtool
-src/config/grandmastercoin-config.h
-src/config/grandmastercoin-config.h.in
+src/config/globalmovementclub-config.h
+src/config/globalmovementclub-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -62,7 +62,7 @@ libconftest.dylib*
 *.o
 *.o-*
 *.patch
-.grandmastercoin
+.globalmovementclub
 *.a
 *.pb.cc
 *.pb.h
@@ -81,12 +81,12 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-grandmastercoin-qt
-GrandMasterCoin-Qt.app
+globalmovementclub-qt
+GlobalMovementClub-Qt.app
 
 # Unit-tests
 Makefile.test
-grandmastercoin-qt_test
+globalmovementclub-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -100,7 +100,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_grandmastercoin.coverage/
+test_globalmovementclub.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -123,13 +123,13 @@ share/BitcoindComparisonTool.jar
 .autotools
 /doc/doxygen/
 
-libgrandmastercoinconsensus.pc
-src/qt/grandmastercoin-qt.bash
+libglobalmovementclubconsensus.pc
+src/qt/globalmovementclub-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-grandmastercoin-cli
-grandmastercoind
-grandmastercoin-qt
+gmc-cli
+gmcd
+globalmovementclub-qt
 make
 /.vscode/

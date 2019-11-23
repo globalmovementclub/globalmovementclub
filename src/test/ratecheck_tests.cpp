@@ -1,9 +1,9 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 
 #include "governance.h"
 
-#include "test/test_grandmastercoin.h"
+#include "test/test_globalmovementclub.h"
 
 #include <boost/test/unit_test.hpp>
 

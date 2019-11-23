@@ -123,7 +123,7 @@ public:
 };
 
 /**
- * GrandMasterCoin RPC command dispatcher.
+ * GlobalMovementClub RPC command dispatcher.
  */
 class CRPCTable
 {

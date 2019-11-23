@@ -1,9 +1,9 @@
 # Linearize
 Construct a linear, no-fork, best version of the blockchain.
 
-## Step 0: Install grandmastercoin_hash
+## Step 0: Install globalmovementclub_hash
 
-https://github.com/grandmastercoin/grandmastercoin_hash
+https://github.com/globalmovementclub/globalmovementclub_hash
 
 ## Step 1: Download hash list
 

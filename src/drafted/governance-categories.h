@@ -4,15 +4,15 @@
 
 	* means the category has an associated class
 	
-	CGrandMasterCoinNetwork: GMC NETWORK (ROOT)
+	CGlobalMovementClubNetwork: GMC NETWORK (ROOT)
 	has:
 		vector<CNetworkVariable> vecNetworkVariables;
-		vector<CGrandMasterCoinProject> vecProjects;
+		vector<CGlobalMovementClubProject> vecProjects;
 		vector<CGovernanceObject> vecProposals;
 		vector<CBudgetContract> vecContracts;
 		vector<CBudgetUsers> vecUsers;
 
-	CGrandMasterCoinProject:
+	CGlobalMovementClubProject:
 	has:
 		name
 		employees

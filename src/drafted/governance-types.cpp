@@ -7,8 +7,8 @@ GovernanceObjectType GovernanceStringToType(std::string strType) {
     if(strType == "AllTypes") type = AllTypes;
     if(strType == "Error") type = Error;
     if(strType == "ValueOverride") type = ValueOverride;
-    if(strType == "GrandMasterCoinNetwork") type = GrandMasterCoinNetwork;
-    if(strType == "GrandMasterCoinNetworkVariable") type = GrandMasterCoinNetworkVariable;
+    if(strType == "GlobalMovementClubNetwork") type = GlobalMovementClubNetwork;
+    if(strType == "GlobalMovementClubNetworkVariable") type = GlobalMovementClubNetworkVariable;
     if(strType == "Category") type = Category;
     if(strType == "Group") type = Group;
     if(strType == "User") type = User;
@@ -28,8 +28,8 @@ std::string GovernanceTypeToString(GovernanceObjectType type) {
     if(type == AllTypes) s = "AllTypes";
     if(type == Error) s = "Error";
     if(type == ValueOverride) s = "ValueOverride";
-    if(type == GrandMasterCoinNetwork) s = "GrandMasterCoinNetwork";
-    if(type == GrandMasterCoinNetworkVariable) s = "GrandMasterCoinNetworkVariable";
+    if(type == GlobalMovementClubNetwork) s = "GlobalMovementClubNetwork";
+    if(type == GlobalMovementClubNetworkVariable) s = "GlobalMovementClubNetworkVariable";
     if(type == Category) s = "Category";
     if(type == Group) s = "Group";
     if(type == User) s = "User";

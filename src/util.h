@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/grandmastercoin-config.h"
+#include "config/globalmovementclub-config.h"
 #endif
 
 #include "compat.h"
@@ -42,7 +42,7 @@
 #define DBG( x ) 
 #endif
 
-//GrandMasterCoin only features
+//GlobalMovementClub only features
 
 extern bool fMasterNode;
 extern bool fLiteMode;
@@ -249,7 +249,7 @@ std::string GetThreadName();
  */
 template <typename Callable> void TraceThread(const char* name,  Callable func)
 {
-    std::string s = strprintf("grandmastercoin-%s", name);
+    std::string s = strprintf("globalmovementclub-%s", name);
     RenameThread(s.c_str());
     try
     {

@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both grandmastercoind and grandmastercoin-qt, to make it harder for attackers to
+ * for both gmcd and globalmovementclub-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("GrandMasterCoin Core");
+const std::string CLIENT_NAME("GlobalMovementClub Core");
 
 /**
  * Client version number

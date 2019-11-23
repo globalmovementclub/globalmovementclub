@@ -1,30 +1,30 @@
-GrandMasterCoin Core 0.7.6
+GlobalMovementClub Core 0.7.6
 =====================
 
-This is the official reference wallet for GrandMasterCoin digital currency and comprises the backbone of the GrandMasterCoin peer-to-peer network. You can [download GrandMasterCoin Core](https://gmastercoin.com/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for GlobalMovementClub digital currency and comprises the backbone of the GlobalMovementClub peer-to-peer network. You can [download GlobalMovementClub Core](https://globalmovement.club/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run GrandMasterCoin on your native platform.
+The following are some helpful notes on how to run GlobalMovementClub on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/grandmastercoin-qt` (GUI) or
-- `bin/grandmastercoind` (headless)
+- `bin/globalmovementclub-qt` (GUI) or
+- `bin/gmcd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run grandmastercoin-qt.exe.
+Unpack the files into a directory, and then run globalmovementclub-qt.exe.
 
 ### OS X
 
-Drag GrandMasterCoin-Qt to your applications folder, and then run GrandMasterCoin-Qt.
+Drag GlobalMovementClub-Qt to your applications folder, and then run GlobalMovementClub-Qt.
 
 Building
 ---------------------
-The following are developer notes on how to build GrandMasterCoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build GlobalMovementClub Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -34,7 +34,7 @@ The following are developer notes on how to build GrandMasterCoin Core on your n
 
 Development
 ---------------------
-The GrandMasterCoin Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The GlobalMovementClub Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -50,8 +50,8 @@ The GrandMasterCoin Core repo's [root README](/README.md) contains relevant info
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [GrandMasterCoinTalk](https://grandmastercointalk.org/) forums, in the Development & Technical Discussion board.
-* Discuss on [#grandmastercoin](http://webchat.freenode.net/?channels=grandmastercoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=grandmastercoin).
+* Discuss on the [GlobalMovementClubTalk](https://globalmovementclubtalk.org/) forums, in the Development & Technical Discussion board.
+* Discuss on [#globalmovementclub](http://webchat.freenode.net/?channels=globalmovementclub) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=globalmovementclub).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@ static const int MODEL_UPDATE_DELAY = 250;
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* GrandMasterCoinGUI -- Size of icons in status bar */
+/* GlobalMovementClubGUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -50,9 +50,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "GrandMasterCoin"
-#define QAPP_ORG_DOMAIN "gmastercoin.com"
-#define QAPP_APP_NAME_DEFAULT "GrandMasterCoin-Qt"
-#define QAPP_APP_NAME_TESTNET "GrandMasterCoin-Qt-testnet"
+#define QAPP_ORG_NAME "GlobalMovementClub"
+#define QAPP_ORG_DOMAIN "globalmovement.club"
+#define QAPP_APP_NAME_DEFAULT "GlobalMovementClub-Qt"
+#define QAPP_APP_NAME_TESTNET "GlobalMovementClub-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

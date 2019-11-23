@@ -1,7 +1,7 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/grandmastercoin/grandmastercoin/blob/master/doc/translation_process.md#syncing-with-transifex)
+* Update translations, see [translation_process.md](https://github.com/globalmovementclub/globalmovementclub/blob/master/doc/translation_process.md#syncing-with-transifex)
 * Update hardcoded [seeds](/contrib/seeds)
 
 * * *
@@ -10,14 +10,14 @@ Release Process
 Check out the source code in the following directory hierarchy.
 
 	cd /path/to/your/toplevel/build
-	git clone https://github.com/grandmastercoin/gitian.sigs.git
-	git clone https://github.com/grandmastercoin/grandmastercoin-detached-sigs.git
+	git clone https://github.com/globalmovementclub/gitian.sigs.git
+	git clone https://github.com/globalmovementclub/globalmovementclub-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/grandmastercoin/grandmastercoin.git
+	git clone https://github.com/globalmovementclub/globalmovementclub.git
 
-### GrandMasterCoin Core maintainers/release engineers, update (commit) version in sources
+### GlobalMovementClub Core maintainers/release engineers, update (commit) version in sources
 
-	pushd ./grandmastercoin
+	pushd ./globalmovementclub
 	contrib/verifysfbinaries/verify.sh
 	configure.ac
 	doc/README*
@@ -40,7 +40,7 @@ Check out the source code in the following directory hierarchy.
 
  Setup Gitian descriptors:
 
-	pushd ./grandmastercoin
+	pushd ./globalmovementclub
 	export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
 	export VERSION=(new version, e.g. 0.8.0)
 	git fetch
@@ -76,52 +76,52 @@ Check out the source code in the following directory hierarchy.
 
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
-	make -C ../grandmastercoin/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../globalmovementclub/depends download SOURCES_PATH=`pwd`/cache/common
 
 Only missing files will be fetched, so this is safe to re-run for each build.
 
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 ```
-./bin/gbuild --url grandmastercoin=/path/to/grandmastercoin,signature=/path/to/sigs {rest of arguments}
+./bin/gbuild --url globalmovementclub=/path/to/globalmovementclub,signature=/path/to/sigs {rest of arguments}
 ```
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign GrandMasterCoin Core for Linux, Windows, and OS X:
+### Build and sign GlobalMovementClub Core for Linux, Windows, and OS X:
 
-	./bin/gbuild --commit grandmastercoin=v${VERSION} ../grandmastercoin/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../grandmastercoin/contrib/gitian-descriptors/gitian-linux.yml
-	mv build/out/grandmastercoin-*.tar.gz build/out/src/grandmastercoin-*.tar.gz ../
+	./bin/gbuild --commit globalmovementclub=v${VERSION} ../globalmovementclub/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../globalmovementclub/contrib/gitian-descriptors/gitian-linux.yml
+	mv build/out/globalmovementclub-*.tar.gz build/out/src/globalmovementclub-*.tar.gz ../
 
-	./bin/gbuild --commit grandmastercoin=v${VERSION} ../grandmastercoin/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../grandmastercoin/contrib/gitian-descriptors/gitian-win.yml
-	mv build/out/grandmastercoin-*-win-unsigned.tar.gz inputs/grandmastercoin-win-unsigned.tar.gz
-	mv build/out/grandmastercoin-*.zip build/out/grandmastercoin-*.exe ../
+	./bin/gbuild --commit globalmovementclub=v${VERSION} ../globalmovementclub/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../globalmovementclub/contrib/gitian-descriptors/gitian-win.yml
+	mv build/out/globalmovementclub-*-win-unsigned.tar.gz inputs/globalmovementclub-win-unsigned.tar.gz
+	mv build/out/globalmovementclub-*.zip build/out/globalmovementclub-*.exe ../
 
-	./bin/gbuild --commit grandmastercoin=v${VERSION} ../grandmastercoin/contrib/gitian-descriptors/gitian-osx.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../grandmastercoin/contrib/gitian-descriptors/gitian-osx.yml
-	mv build/out/grandmastercoin-*-osx-unsigned.tar.gz inputs/grandmastercoin-osx-unsigned.tar.gz
-	mv build/out/grandmastercoin-*.tar.gz build/out/grandmastercoin-*.dmg ../
+	./bin/gbuild --commit globalmovementclub=v${VERSION} ../globalmovementclub/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../globalmovementclub/contrib/gitian-descriptors/gitian-osx.yml
+	mv build/out/globalmovementclub-*-osx-unsigned.tar.gz inputs/globalmovementclub-osx-unsigned.tar.gz
+	mv build/out/globalmovementclub-*.tar.gz build/out/globalmovementclub-*.dmg ../
 	popd
 
   Build output expected:
 
-  1. source tarball (grandmastercoin-${VERSION}.tar.gz)
-  2. linux 32-bit and 64-bit dist tarballs (grandmastercoin-${VERSION}-linux[32|64].tar.gz)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (grandmastercoin-${VERSION}-win[32|64]-setup-unsigned.exe, grandmastercoin-${VERSION}-win[32|64].zip)
-  4. OS X unsigned installer and dist tarball (grandmastercoin-${VERSION}-osx-unsigned.dmg, grandmastercoin-${VERSION}-osx64.tar.gz)
+  1. source tarball (globalmovementclub-${VERSION}.tar.gz)
+  2. linux 32-bit and 64-bit dist tarballs (globalmovementclub-${VERSION}-linux[32|64].tar.gz)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (globalmovementclub-${VERSION}-win[32|64]-setup-unsigned.exe, globalmovementclub-${VERSION}-win[32|64].zip)
+  4. OS X unsigned installer and dist tarball (globalmovementclub-${VERSION}-osx-unsigned.dmg, globalmovementclub-${VERSION}-osx64.tar.gz)
   5. Gitian signatures (in gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
   Add other gitian builders keys to your gpg keyring
 
-	gpg --import ../grandmastercoin/contrib/gitian-downloader/*.pgp
+	gpg --import ../globalmovementclub/contrib/gitian-downloader/*.pgp
 
   Verify the signatures
 
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../grandmastercoin/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../grandmastercoin/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../grandmastercoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../globalmovementclub/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../globalmovementclub/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../globalmovementclub/contrib/gitian-descriptors/gitian-osx.yml
 
 	popd
 
@@ -139,25 +139,25 @@ Commit your signature to gitian.sigs:
 
   Wait for Windows/OS X detached signatures:
 	Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-	Detached signatures will then be committed to the [grandmastercoin-detached-sigs](https://github.com/grandmastercoin/grandmastercoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+	Detached signatures will then be committed to the [globalmovementclub-detached-sigs](https://github.com/globalmovementclub/globalmovementclub-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
   Create (and optionally verify) the signed OS X binary:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../grandmastercoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../grandmastercoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../grandmastercoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	mv build/out/grandmastercoin-osx-signed.dmg ../grandmastercoin-${VERSION}-osx.dmg
+	./bin/gbuild -i --commit signature=v${VERSION} ../globalmovementclub/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../globalmovementclub/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../globalmovementclub/contrib/gitian-descriptors/gitian-osx-signer.yml
+	mv build/out/globalmovementclub-osx-signed.dmg ../globalmovementclub-${VERSION}-osx.dmg
 	popd
 
   Create (and optionally verify) the signed Windows binaries:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../grandmastercoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../grandmastercoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../grandmastercoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	mv build/out/grandmastercoin-*win64-setup.exe ../grandmastercoin-${VERSION}-win64-setup.exe
-	mv build/out/grandmastercoin-*win32-setup.exe ../grandmastercoin-${VERSION}-win32-setup.exe
+	./bin/gbuild -i --commit signature=v${VERSION} ../globalmovementclub/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../globalmovementclub/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../globalmovementclub/contrib/gitian-descriptors/gitian-win-signer.yml
+	mv build/out/globalmovementclub-*win64-setup.exe ../globalmovementclub-${VERSION}-win64-setup.exe
+	mv build/out/globalmovementclub-*win32-setup.exe ../globalmovementclub-${VERSION}-win32-setup.exe
 	popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -182,21 +182,21 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the gmastercoin.com server
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the globalmovement.club server
 
-- Update gmastercoin.com
+- Update globalmovement.club
 
 - Announce the release:
 
-  - Release on GrandMasterCoin forum: https://gmastercoin.com/forum/topic/official-announcements.54/
+  - Release on GlobalMovementClub forum: https://globalmovement.club/forum/topic/official-announcements.54/
 
-  - GrandMasterCoin-development mailing list
+  - GlobalMovementClub-development mailing list
 
-  - Update title of #grandmastercoin on Freenode IRC
+  - Update title of #globalmovementclub on Freenode IRC
 
-  - Optionally reddit /r/GrandMasterCoin, ... but this will usually sort out itself
+  - Optionally reddit /r/GlobalMovementClub, ... but this will usually sort out itself
 
-- Notify flare so that he can start building [the PPAs](https://launchpad.net/~gmastercoin.com/+archive/ubuntu/grandmastercoin)
+- Notify flare so that he can start building [the PPAs](https://launchpad.net/~globalmovement.club/+archive/ubuntu/globalmovementclub)
 
 - Add release notes for the new version to the directory `doc/release-notes` in git master
 

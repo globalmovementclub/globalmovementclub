@@ -21,7 +21,7 @@ Construct a linear, no-fork, best version of the blockchain.
 
 ### [Qos](/contrib/qos) ###
 
-A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the GrandMasterCoin network. This means one can have an always-on grandmastercoind instance running, and another local grandmastercoind/grandmastercoin-qt instance which connects to this node and receives blocks from it.
+A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the GlobalMovementClub network. This means one can have an always-on gmcd instance running, and another local gmcd/globalmovementclub-qt instance which connects to this node and receives blocks from it.
 
 ### [Seeds](/contrib/seeds) ###
 Utility to generate the pnSeed[] array that is compiled into the client.
@@ -30,8 +30,8 @@ Build Tools and Keys
 ---------------------
 
 ### [Debian](/contrib/debian) ###
-Contains files used to package grandmastercoind/grandmastercoin-qt
-for Debian-based Linux systems. If you compile grandmastercoind/grandmastercoin-qt yourself, there are some useful files here.
+Contains files used to package gmcd/globalmovementclub-qt
+for Debian-based Linux systems. If you compile gmcd/globalmovementclub-qt yourself, there are some useful files here.
 
 ### [Gitian-descriptors](/contrib/gitian-descriptors) ###
 Gavin's notes on getting gitian builds up and running using KVM.
@@ -46,7 +46,7 @@ Test and Verify Tools
 ---------------------
 
 ### [TestGen](/contrib/testgen) ###
-Utilities to generate test vectors for the data-driven GrandMasterCoin tests.
+Utilities to generate test vectors for the data-driven GlobalMovementClub tests.
 
 ### [Test Patches](/contrib/test-patches) ###
 These patches are applied when the automated pull-tester

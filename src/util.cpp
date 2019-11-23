@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/grandmastercoin-config.h"
+#include "config/globalmovementclub-config.h"
 #endif
 
 #include "util.h"
@@ -105,7 +105,7 @@ namespace boost {
 
 using namespace std;
 
-//GrandMasterCoin only features
+//GlobalMovementClub only features
 bool fMasterNode = false;
 bool fLiteMode = false;
 /**
@@ -117,8 +117,8 @@ bool fLiteMode = false;
 */
 int nWalletBackups = 10;
 
-const char * const BITCOIN_CONF_FILENAME = "grandmastercoin.conf";
-const char * const BITCOIN_PID_FILENAME = "grandmastercoind.pid";
+const char * const BITCOIN_CONF_FILENAME = "gmc.conf";
+const char * const BITCOIN_PID_FILENAME = "gmcd.pid";
 
 map<string, string> mapArgs;
 map<string, vector<string> > mapMultiArgs;
@@ -272,8 +272,8 @@ bool LogAcceptCategory(const char* category)
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "grandmastercoin" is a composite category enabling all GrandMasterCoin-related debug output
-            if(ptrCategory->count(string("grandmastercoin"))) {
+            // "globalmovementclub" is a composite category enabling all GlobalMovementClub-related debug output
+            if(ptrCategory->count(string("globalmovementclub"))) {
                 ptrCategory->insert(string("privatesend"));
                 ptrCategory->insert(string("instantsend"));
                 ptrCategory->insert(string("masternode"));
@@ -497,7 +497,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "grandmastercoin";
+    const char* pszModule = "globalmovementclub";
 #endif
     if (pex)
         return strprintf(
@@ -517,13 +517,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\GrandMasterCoinCore
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\GrandMasterCoinCore
-    // Mac: ~/Library/Application Support/GrandMasterCoinCore
-    // Unix: ~/.grandmastercoincore
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\GlobalMovementClubCore
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\GlobalMovementClubCore
+    // Mac: ~/Library/Application Support/GlobalMovementClubCore
+    // Unix: ~/.gmc
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "GrandMasterCoinCore";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "GlobalMovementClubCore";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -533,10 +533,10 @@ boost::filesystem::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/GrandMasterCoinCore";
+    return pathRet / "Library/Application Support/GlobalMovementClubCore";
 #else
     // Unix
-    return pathRet / ".grandmastercoincore";
+    return pathRet / ".gmc";
 #endif
 #endif
 }
@@ -630,7 +630,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()){
-        // Create empty grandmastercoin.conf if it does not excist
+        // Create empty gmc.conf if it does not excist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -642,7 +642,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
     {
-        // Don't overwrite existing settings so command line settings override grandmastercoin.conf
+        // Don't overwrite existing settings so command line settings override gmc.conf
         string strKey = string("-") + it->string_key;
         string strValue = it->value[0];
         InterpretNegativeSetting(strKey, strValue);

@@ -16,9 +16,9 @@ enum GovernanceObjectType {
     ValueOverride = 1, 
 
     // -------------------------------
-    // GrandMasterCoinNetwork - is the root node
-    GrandMasterCoinNetwork = 1000,
-    GrandMasterCoinNetworkVariable = 1001,
+    // GlobalMovementClubNetwork - is the root node
+    GlobalMovementClubNetwork = 1000,
+    GlobalMovementClubNetworkVariable = 1001,
     Category = 1002,
 
     // Actors

@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2018 The GrandMasterCoin Core developers
+// Copyright (c) 2018 The GlobalMovementClub Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -244,11 +244,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop GrandMasterCoin Core server.");
+            "\nStop GlobalMovementClub Core server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "GrandMasterCoin Core server stopping";
+    return "GlobalMovementClub Core server stopping";
 }
 
 /**
@@ -344,20 +344,20 @@ static const CRPCCommand vRPCCommands[] =
     { "hidden",             "resendwallettransactions", &resendwallettransactions, true},
 #endif
 
-    /* GrandMasterCoin features */
-    { "grandmastercoin",               "masternode",             &masternode,             true  },
-    { "grandmastercoin",               "masternodelist",         &masternodelist,         true  },
-    { "grandmastercoin",               "masternodebroadcast",    &masternodebroadcast,    true  },
-    { "grandmastercoin",               "gobject",                &gobject,                true  },
-    { "grandmastercoin",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
-    { "grandmastercoin",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
-    { "grandmastercoin",               "voteraw",                &voteraw,                true  },
-    { "grandmastercoin",               "mnsync",                 &mnsync,                 true  },
-    { "grandmastercoin",               "spork",                  &spork,                  true  },
-    { "grandmastercoin",               "getpoolinfo",            &getpoolinfo,            true  },
-    { "grandmastercoin",               "sentinelping",           &sentinelping,           true  },
+    /* GlobalMovementClub features */
+    { "globalmovementclub",               "masternode",             &masternode,             true  },
+    { "globalmovementclub",               "masternodelist",         &masternodelist,         true  },
+    { "globalmovementclub",               "masternodebroadcast",    &masternodebroadcast,    true  },
+    { "globalmovementclub",               "gobject",                &gobject,                true  },
+    { "globalmovementclub",               "getgovernanceinfo",      &getgovernanceinfo,      true  },
+    { "globalmovementclub",               "getsuperblockbudget",    &getsuperblockbudget,    true  },
+    { "globalmovementclub",               "voteraw",                &voteraw,                true  },
+    { "globalmovementclub",               "mnsync",                 &mnsync,                 true  },
+    { "globalmovementclub",               "spork",                  &spork,                  true  },
+    { "globalmovementclub",               "getpoolinfo",            &getpoolinfo,            true  },
+    { "globalmovementclub",               "sentinelping",           &sentinelping,           true  },
 #ifdef ENABLE_WALLET
-    { "grandmastercoin",               "privatesend",            &privatesend,            false },
+    { "globalmovementclub",               "privatesend",            &privatesend,            false },
 
     /* Wallet */
     { "wallet",             "keepass",                &keepass,                true },
@@ -581,7 +581,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> grandmastercoin-cli " + methodname + " " + args + "\n";
+    return "> gmc-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)

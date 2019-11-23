@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between grandmastercoin-cli and grandmastercoind)
- * of a given instance of the GrandMasterCoin system.
+ * CBaseChainParams defines the base parameters (shared between gmc-cli and gmcd)
+ * of a given instance of the GlobalMovementClub system.
  */
 class CBaseChainParams
 {

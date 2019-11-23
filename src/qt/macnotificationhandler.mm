@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.grandmastercoin.GrandMasterCoin-Qt";
+        return @"org.globalmovementclub.GlobalMovementClub-Qt";
     } else {
         return [self __bundleIdentifier];
     }

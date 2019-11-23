@@ -49,8 +49,8 @@ EXTRA_LIBRARIES += libbitcoin_zmq.a
 endif
 
 if BUILD_BITCOIN_LIBS
-lib_LTLIBRARIES = libgrandmastercoinconsensus.la
-LIBBITCOIN_CONSENSUS=libgrandmastercoinconsensus.la
+lib_LTLIBRARIES = libglobalmovementclubconsensus.la
+LIBBITCOIN_CONSENSUS=libglobalmovementclubconsensus.la
 else
 LIBBITCOIN_CONSENSUS=
 endif
@@ -60,15 +60,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += grandmastercoind
+  bin_PROGRAMS += gmcd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += grandmastercoin-cli grandmastercoin-tx
+  bin_PROGRAMS += gmc-cli gmc-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# grandmastercoin core #
+# globalmovementclub core #
 BITCOIN_CORE_H = \
   addrdb.h \
   activemasternode.h \
@@ -207,7 +207,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between grandmastercoind and grandmastercoin-qt
+# server: shared between gmcd and globalmovementclub-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -280,7 +280,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between grandmastercoind and grandmastercoin-qt, but only linked
+# wallet: shared between gmcd and globalmovementclub-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -345,7 +345,7 @@ crypto_libbitcoin_crypto_a_SOURCES += \
   crypto/sph_skein.h \
   crypto/sph_types.h
 
-# common: shared between grandmastercoind, and grandmastercoin-qt and non-server tools
+# common: shared between gmcd, and globalmovementclub-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -405,7 +405,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between grandmastercoin-cli and grandmastercoin-qt
+# cli: shared between gmc-cli and globalmovementclub-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -416,16 +416,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-grandmastercoind_SOURCES = grandmastercoind.cpp
-grandmastercoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-grandmastercoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-grandmastercoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+gmcd_SOURCES = gmcd.cpp
+gmcd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+gmcd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+gmcd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-grandmastercoind_SOURCES += grandmastercoind-res.rc
+gmcd_SOURCES += gmcd-res.rc
 endif
 
-grandmastercoind_LDADD = \
+gmcd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -436,56 +436,56 @@ grandmastercoind_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-grandmastercoind_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+gmcd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-grandmastercoind_LDADD += libbitcoin_wallet.a
+gmcd_LDADD += libbitcoin_wallet.a
 endif
 
-grandmastercoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+gmcd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
-# grandmastercoin-cli binary #
-grandmastercoin_cli_SOURCES = grandmastercoin-cli.cpp
-grandmastercoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-grandmastercoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-grandmastercoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# gmc-cli binary #
+globalmovementclub_cli_SOURCES = gmc-cli.cpp
+globalmovementclub_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+globalmovementclub_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+globalmovementclub_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-grandmastercoin_cli_SOURCES += grandmastercoin-cli-res.rc
+globalmovementclub_cli_SOURCES += gmc-cli-res.rc
 endif
 
-grandmastercoin_cli_LDADD = \
+globalmovementclub_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL)
-grandmastercoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+globalmovementclub_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# grandmastercoin-tx binary #
-grandmastercoin_tx_SOURCES = grandmastercoin-tx.cpp
-grandmastercoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-grandmastercoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-grandmastercoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# gmc-tx binary #
+globalmovementclub_tx_SOURCES = gmc-tx.cpp
+globalmovementclub_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+globalmovementclub_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+globalmovementclub_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-grandmastercoin_tx_SOURCES += grandmastercoin-tx-res.rc
+globalmovementclub_tx_SOURCES += gmc-tx-res.rc
 endif
 
-grandmastercoin_tx_LDADD = \
+globalmovementclub_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-grandmastercoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+globalmovementclub_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
-# grandmastercoinconsensus library #
+# globalmovementclubconsensus library #
 if BUILD_BITCOIN_LIBS
-include_HEADERS = script/grandmastercoinconsensus.h
-libgrandmastercoinconsensus_la_SOURCES = \
+include_HEADERS = script/globalmovementclubconsensus.h
+libglobalmovementclubconsensus_la_SOURCES = \
   crypto/hmac_sha512.cpp \
   crypto/ripemd160.cpp \
   crypto/sha1.cpp \
@@ -494,20 +494,20 @@ libgrandmastercoinconsensus_la_SOURCES = \
   hash.cpp \
   primitives/transaction.cpp \
   pubkey.cpp \
-  script/grandmastercoinconsensus.cpp \
+  script/globalmovementclubconsensus.cpp \
   script/interpreter.cpp \
   script/script.cpp \
   uint256.cpp \
   utilstrencodings.cpp
 
 if GLIBC_BACK_COMPAT
-  libgrandmastercoinconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libglobalmovementclubconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libgrandmastercoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libgrandmastercoinconsensus_la_LIBADD = $(LIBSECP256K1)
-libgrandmastercoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libgrandmastercoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libglobalmovementclubconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libglobalmovementclubconsensus_la_LIBADD = $(LIBSECP256K1)
+libglobalmovementclubconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libglobalmovementclubconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #

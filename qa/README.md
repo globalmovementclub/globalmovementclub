@@ -1,7 +1,7 @@
 The [pull-tester](/qa/pull-tester/) folder contains a script to call
 multiple tests from the [rpc-tests](/qa/rpc-tests/) folder.
 
-Every pull request to the GrandMasterCoin Core repository is built and run through
+Every pull request to the GlobalMovementClub Core repository is built and run through
 the regression test suite. You can also run all or only individual
 tests locally.
 
@@ -31,9 +31,9 @@ Possible options:
 
 ```
   -h, --help            show this help message and exit
-  --nocleanup           Leave grandmastercoinds and test.* datadir on exit or error
-  --noshutdown          Don't stop grandmastercoinds after the test execution
-  --srcdir=SRCDIR       Source directory containing grandmastercoind/grandmastercoin-cli
+  --nocleanup           Leave gmcds and test.* datadir on exit or error
+  --noshutdown          Don't stop gmcds after the test execution
+  --srcdir=SRCDIR       Source directory containing gmcd/gmc-cli
                         (default: ../../src)
   --tmpdir=TMPDIR       Root directory for datadirs
   --tracerpc            Print out all RPC calls as they are made
@@ -58,7 +58,7 @@ to recover with:
 
 ```bash
 rm -rf cache
-killall grandmastercoind
+killall gmcd
 ```
 
 Writing tests

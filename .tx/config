@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[grandmastercoin.qt-translation-012x]
-file_filter = src/qt/locale/grandmastercoin_<lang>.ts
-source_file = src/qt/locale/grandmastercoin_en.ts
+[globalmovementclub.qt-translation-012x]
+file_filter = src/qt/locale/globalmovementclub_<lang>.ts
+source_file = src/qt/locale/globalmovementclub_en.ts
 source_lang = en
