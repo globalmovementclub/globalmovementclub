@@ -1,4 +1,4 @@
-GlobalMovementClub Core 0.7.6
+GlobalMovementClub Core 0.7.7
 =====================
 
 Intro

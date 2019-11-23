@@ -1,4 +1,4 @@
-GlobalMovementClub Core staging tree 0.7.6
+GlobalMovementClub Core staging tree 0.7.7
 ===============================
 
 https://globalmovement.club

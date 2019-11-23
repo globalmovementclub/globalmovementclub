@@ -1,4 +1,4 @@
-GlobalMovementClub Core 0.7.6
+GlobalMovementClub Core 0.7.7
 =====================
 
 This is the official reference wallet for GlobalMovementClub digital currency and comprises the backbone of the GlobalMovementClub peer-to-peer network. You can [download GlobalMovementClub Core](https://globalmovement.club/downloads/) or [build it yourself](#building) using the guides below.
