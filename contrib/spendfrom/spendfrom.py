@@ -35,7 +35,7 @@ def check_json_precision():
 def determine_db_dir():
     """Return the default location of the GlobalMovementClub Core data directory"""
     if platform.system() == "Darwin":
-        return os.path.expanduser("~/Library/Application Support/GlobalMovementClubCore/")
+        return os.path.expanduser("~/Library/Application Support/GMC/")
     elif platform.system() == "Windows":
         return os.path.join(os.environ['APPDATA'], "GlobalMovementClubCore")
     return os.path.expanduser("~/.gmc")

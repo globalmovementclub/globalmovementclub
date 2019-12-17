@@ -2,8 +2,8 @@
 
 # backward compatibility for existing gentoo layout 
 #
-if [ -d "/var/lib/globalmovementclubcore/.gmc" ]; then
-	BITCOIND_DEFAULT_DATADIR="/var/lib/globalmovementclubcore/.gmc"
+if [ -d "/var/lib/gmc/.gmc" ]; then
+	BITCOIND_DEFAULT_DATADIR="/var/lib/gmc/.gmc"
 else
 	BITCOIND_DEFAULT_DATADIR="/var/lib/gmcd"
 fi

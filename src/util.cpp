@@ -118,7 +118,7 @@ bool fLiteMode = false;
 int nWalletBackups = 10;
 
 const char * const BITCOIN_CONF_FILENAME = "gmc.conf";
-const char * const BITCOIN_PID_FILENAME = "gmcd.pid";
+const char * const BITCOIN_PID_FILENAME = "gmc.pid";
 
 map<string, string> mapArgs;
 map<string, vector<string> > mapMultiArgs;
@@ -517,13 +517,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\GlobalMovementClubCore
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\GlobalMovementClubCore
-    // Mac: ~/Library/Application Support/GlobalMovementClubCore
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\GMC
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\GMC
+    // Mac: ~/Library/Application Support/GMC
     // Unix: ~/.gmc
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "GlobalMovementClubCore";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "GMC";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -533,7 +533,7 @@ boost::filesystem::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/GlobalMovementClubCore";
+    return pathRet / "Library/Application Support/GMC";
 #else
     // Unix
     return pathRet / ".gmc";

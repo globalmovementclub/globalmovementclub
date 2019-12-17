@@ -9,9 +9,9 @@ pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libglobalmovementclubconsensus.pc
 endif
 
-BITCOIND_BIN=$(top_builddir)/src/gmcd$(EXEEXT)
+BITCOIND_BIN=$(top_builddir)/src/globalmovementclubd$(EXEEXT)
 BITCOIN_QT_BIN=$(top_builddir)/src/qt/globalmovementclub-qt$(EXEEXT)
-BITCOIN_CLI_BIN=$(top_builddir)/src/gmc-cli$(EXEEXT)
+BITCOIN_CLI_BIN=$(top_builddir)/src/globalmovementclub-cli$(EXEEXT)
 BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 
 OSX_APP=GlobalMovementClub-Qt.app

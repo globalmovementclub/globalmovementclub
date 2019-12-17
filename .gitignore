@@ -7,6 +7,9 @@ reset-files.bash
 
 *.exe
 src/globalmovementclub
+src/globalmovementclubd
+src/globalmovementclub-cli
+src/globalmovementclub-tx
 src/gmcd
 src/gmc-cli
 src/gmc-tx
@@ -62,7 +65,7 @@ libconftest.dylib*
 *.o
 *.o-*
 *.patch
-.globalmovementclub
+.gmc
 *.a
 *.pb.cc
 *.pb.h
@@ -130,6 +133,8 @@ qa/pull-tester/tests-config.sh
 #development symlinks
 gmc-cli
 gmcd
+globalmovementclub-cli
+globalmovementclubd
 globalmovementclub-qt
 make
 /.vscode/

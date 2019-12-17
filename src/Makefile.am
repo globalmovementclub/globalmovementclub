@@ -60,11 +60,11 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += gmcd
+  bin_PROGRAMS += globalmovementclubd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += gmc-cli gmc-tx
+  bin_PROGRAMS += globalmovementclub-cli globalmovementclub-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -207,7 +207,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between gmcd and globalmovementclub-qt
+# server: shared between globalmovementclubd and globalmovementclub-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -280,7 +280,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between gmcd and globalmovementclub-qt, but only linked
+# wallet: shared between globalmovementclubd and globalmovementclub-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -345,7 +345,7 @@ crypto_libbitcoin_crypto_a_SOURCES += \
   crypto/sph_skein.h \
   crypto/sph_types.h
 
-# common: shared between gmcd, and globalmovementclub-qt and non-server tools
+# common: shared between globalmovementclubd, and globalmovementclub-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -405,7 +405,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between gmc-cli and globalmovementclub-qt
+# cli: shared between globalmovementclub-cli and globalmovementclub-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -416,16 +416,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-gmcd_SOURCES = gmcd.cpp
-gmcd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-gmcd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-gmcd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+globalmovementclubd_SOURCES = globalmovementclubd.cpp
+globalmovementclubd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+globalmovementclubd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+globalmovementclubd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-gmcd_SOURCES += gmcd-res.rc
+globalmovementclubd_SOURCES += globalmovementclubd-res.rc
 endif
 
-gmcd_LDADD = \
+globalmovementclubd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -436,23 +436,23 @@ gmcd_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-gmcd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+globalmovementclubd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-gmcd_LDADD += libbitcoin_wallet.a
+globalmovementclubd_LDADD += libbitcoin_wallet.a
 endif
 
-gmcd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+globalmovementclubd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
-# gmc-cli binary #
-globalmovementclub_cli_SOURCES = gmc-cli.cpp
+# globalmovementclub-cli binary #
+globalmovementclub_cli_SOURCES = globalmovementclub-cli.cpp
 globalmovementclub_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 globalmovementclub_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 globalmovementclub_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-globalmovementclub_cli_SOURCES += gmc-cli-res.rc
+globalmovementclub_cli_SOURCES += globalmovementclub-cli-res.rc
 endif
 
 globalmovementclub_cli_LDADD = \
@@ -462,14 +462,14 @@ globalmovementclub_cli_LDADD = \
 globalmovementclub_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# gmc-tx binary #
-globalmovementclub_tx_SOURCES = gmc-tx.cpp
+# globalmovementclub-tx binary #
+globalmovementclub_tx_SOURCES = globalmovementclub-tx.cpp
 globalmovementclub_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 globalmovementclub_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 globalmovementclub_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-globalmovementclub_tx_SOURCES += gmc-tx-res.rc
+globalmovementclub_tx_SOURCES += globalmovementclub-tx-res.rc
 endif
 
 globalmovementclub_tx_LDADD = \

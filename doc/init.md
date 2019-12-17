@@ -68,9 +68,9 @@ can then be controlled by group membership.
 3b) Mac OS X
 
 Binary:              `/usr/local/bin/gmcd`  
-Configuration file:  `~/Library/Application Support/GlobalMovementClubCore/gmc.conf`  
-Data directory:      `~/Library/Application Support/GlobalMovementClubCore`
-Lock file:           `~/Library/Application Support/GlobalMovementClubCore/.lock`
+Configuration file:  `~/Library/Application Support/GMC/gmc.conf`  
+Data directory:      `~/Library/Application Support/GMC`
+Lock file:           `~/Library/Application Support/GMC/.lock`
 
 4. Installing Service Configuration
 -----------------------------------
